@@ -7,7 +7,8 @@ public abstract class Person {
 	private String lname;
 	private String fname;
 	private String email;
-	public Person(String id, String lname, String fname, String email) {
+	private Address address;
+	public Person(String id, String lname, String fname, String email, Address address) {
 		super();
 		this.id = UUID.randomUUID().toString();
 		this.lname = lname;
@@ -16,6 +17,10 @@ public abstract class Person {
 	}
 	public String getId() {
 		return id;
+	}
+	
+	public Address getAddress() {
+		return address;
 	}
 	public void setId(String id) {
 		this.id = id;
