@@ -13,9 +13,8 @@ public interface IPassengerRepository {
 	boolean removePassenger(Passenger passenger);
 
 	boolean updatePassenger(Passenger passenger);
-
-	List<Passenger> findPassengersByAgent(Agent agent);
 	
-	List<Passenger> findPassengerByFlightInstance(FlightInstance instance);
-
+	List<Passenger> getAllPassengers();
+	
+	Passenger getPassengerById(String id);
 }

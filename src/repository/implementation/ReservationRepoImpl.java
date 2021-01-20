@@ -4,8 +4,10 @@ import java.util.Hashtable;
 import java.util.List;
 
 import model.Agent;
+import model.FlightInstance;
 import model.Passenger;
 import model.Reservation;
+import model.Ticket;
 import repository.interfaces.IReservationRepository;
 
 public class ReservationRepoImpl implements IReservationRepository {
@@ -16,26 +18,18 @@ public class ReservationRepoImpl implements IReservationRepository {
 	}
 	@Override
 	public boolean addReservation(Reservation reservation) {
-		// TODO Auto-generated method stub
-		return false;
+		return reservations.put(reservation.getCode(), reservation) != null;
 	}
 
 	@Override
 	public boolean removeReservation(Reservation reservation) {
-		// TODO Auto-generated method stub
-		return false;
+		return reservations.remove(reservation.getCode()) != null;
 	}
 
 	@Override
-	public List<Reservation> findReservationsByPassengerId(Passenger passenger) {
-		// TODO Auto-generated method stub
-		return null;
+	public Reservation getReservationByCode(String code) {
+		return reservations.get(code);
 	}
-
-	@Override
-	public List<Reservation> findReservationByAgent(Agent agent) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

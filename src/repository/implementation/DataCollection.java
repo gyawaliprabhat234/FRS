@@ -16,6 +16,7 @@ import model.Passenger;
 import model.Pilot;
 import model.Reservation;
 import model.Ticket;
+import repository.interfaces.IAgentRepository;
 import repository.interfaces.IAirlineRepository;
 import repository.interfaces.IAirportRepository;
 import repository.interfaces.ICrewRepository;
@@ -37,6 +38,7 @@ public final class DataCollection {
 	private static IPilotRepository pilot;
 	private static IReservationRepository reservation;
 	private static ITicketRepository ticket;
+	private static IAgentRepository agent;
 
 	DataCollection() {
 		airline = new AirlineRepoImpl();
@@ -48,6 +50,7 @@ public final class DataCollection {
 		pilot = new PilotRepoImpl();
 		reservation = new ReservationRepoImpl();
 		ticket = new TicketRepoImpl();
+		agent = new AgentRepoImpl();
 
 	}
 
@@ -85,6 +88,9 @@ public final class DataCollection {
 
 	public ITicketRepository getTicket() {
 		return ticket;
+	}
+	public IAgentRepository getAgent() {
+		return agent;
 	}
 
 }

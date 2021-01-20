@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.UUID;
 
 public class Agent {
 	private String id;
@@ -14,6 +15,14 @@ public class Agent {
 	
 	public void addPassenger(Passenger passenger) {
 		passengers.add(passenger);
+	}
+	
+	public List<Passenger> getPassengers(){
+		return this.passengers;
+	}
+	
+	public String getId() {
+		return this.id;
 	}
 
 }

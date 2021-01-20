@@ -9,7 +9,7 @@ public class ServiceFactory {
 	public static IFlightService flight = new 
 			 FlightServiceImpl(RepositoryFactory.getDbObj());
 	public static IReservationService reservation = new 
-			 ReservationServiceImpl(RepositoryFactory.getDbObj());
+			ReservationServiceImpl(RepositoryFactory.getDbObj());
 	
 	public static IReservationService getReservationService() {
 		return reservation;		

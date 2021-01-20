@@ -1,7 +1,9 @@
 package repository.implementation;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.UUID;
 
 import model.Airport;
 import model.Flight;
@@ -11,9 +13,9 @@ import repository.interfaces.IFlightRepository;
 
 public class FlightInstanceRepoImpl implements IFlightInstanceRepository {
 	private Hashtable<String, FlightInstance> flightInstances;
-	
-	FlightInstanceRepoImpl(){
-		 flightInstances = new Hashtable<>();
+
+	FlightInstanceRepoImpl() {
+		flightInstances = new Hashtable<>();
 	}
 
 	@Override
@@ -24,14 +26,17 @@ public class FlightInstanceRepoImpl implements IFlightInstanceRepository {
 
 	@Override
 	public boolean addFlightInstance(FlightInstance instance) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result = flightInstances.put(instance.getId(), instance) == null;
+		if (result != false) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
 	public boolean removeFlightInstance(FlightInstance instance) {
-		// TODO Auto-generated method stub
-		return false;
+		flightInstances.remove(instance.getId());
+		return true;
 	}
 
 	@Override
@@ -39,8 +44,11 @@ public class FlightInstanceRepoImpl implements IFlightInstanceRepository {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
 
+	public List<FlightInstance> getAllFlightInstances() {
+		List<FlightInstance> allflightInstances = new ArrayList<FlightInstance>(flightInstances.values());
+		return allflightInstances;
 
+	}
 
 }

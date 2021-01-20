@@ -16,32 +16,29 @@ public class PassengerRepoImpl implements IPassengerRepository {
 	}
 	@Override
 	public boolean addPassenger(Passenger passenger) {
-		// TODO Auto-generated method stub
-		return false;
+		return passengers.put(passenger.getId(), passenger) != null;
 	}
 
 	@Override
 	public boolean removePassenger(Passenger passenger) {
-		// TODO Auto-generated method stub
-		return false;
+		return passengers.remove(passenger.getId()) != null;
 	}
 
 	@Override
 	public boolean updatePassenger(Passenger passenger) {
-		// TODO Auto-generated method stub
 		return false;
 	}
-
 	@Override
-	public List<Passenger> findPassengersByAgent(Agent agent) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Passenger> getAllPassengers() {
+		return List.copyOf(this.passengers.values());
+		
 	}
-
 	@Override
-	public List<Passenger> findPassengerByFlightInstance(FlightInstance instance) {
-		// TODO Auto-generated method stub
-		return null;
+	public Passenger getPassengerById(String id) {
+		return passengers.get(id);
 	}
+	
+	
 
+	
 }

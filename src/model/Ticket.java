@@ -2,29 +2,26 @@ package model;
 
 import java.util.UUID;
 
+import utility.Generator;
+
 public class Ticket {
-	private String id;
-	private long number;
+	private String number;
 	private Reservation reservation;
 	private Passenger passenger;
 	private FlightInstance flightInstance;
-	
-	
-	public Ticket(String id, long number, Reservation reservation, Passenger passenger, FlightInstance flightInstance) {
+
+	public Ticket(Reservation reservation, Passenger passenger, FlightInstance flightInstance) {
 		super();
-		this.id = UUID.randomUUID().toString();
-		this.number = number;
+		this.number = Generator.genTicketNumber();
 		this.reservation = reservation;
 		this.passenger = passenger;
+		passenger.addTicket(this);
 		this.flightInstance = flightInstance;
 	}
 	public String getId() {
-		return id;
-	}
-	public long getNumber() {
 		return number;
 	}
-	public void setNumber(long number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	public Reservation getReservation() {

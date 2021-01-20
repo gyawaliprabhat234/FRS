@@ -1,7 +1,9 @@
 package repository.implementation;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map.Entry;
 
 import model.Airline;
 import repository.interfaces.IAirlineRepository;
@@ -13,35 +15,47 @@ public class AirlineRepoImpl implements IAirlineRepository {
 	}
 	@Override
 	public boolean addAirline(Airline airline) {
-		boolean result =  airlines.put(airline.getId(), airline) == null;
-		return !result;
+		if (airlines.put(airline.getId(), airline) == null)
+			return true;
+		return false;
 	}
 
-	@Override
+	// @Override,
 	public boolean updateAirline(Airline airline) {
-		// TODO Auto-generated method stub
-		return false;
+		if (airlines.containsValue(airline)) {
+			return false;
+		}
+		airlines.put(null, airline);
+		return true;
 	}
 
 	@Override
 	public boolean removeAirline(Airline airline) {
-		// TODO Auto-generated method stub
+		if (airlines.contains(airline)) {
+
+			airlines.remove(airline);
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public List<Airline> findAllAirlines() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Airline> airlinelist = new ArrayList<Airline>();
+		for (Entry<String, Airline> pair : airlines.entrySet()) {
+			airlinelist.add((Airline) airlines.entrySet());
+		}
+		return airlinelist;
 	}
 
 	@Override
 	public List<Airline> findAirlinesByAirportCode(String airportCode) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	void add() {
-		
+		List<Airline> Airlis = new ArrayList<Airline>();
+		AirportRepoImpl air = new AirportRepoImpl();
+		if (air.findAirportByAirportCode(airportCode).getCode().equalsIgnoreCase(airportCode)) {
+			Airlis.addAll(0, Airlis);
+		}
+		return Airlis;
 	}
 
 }

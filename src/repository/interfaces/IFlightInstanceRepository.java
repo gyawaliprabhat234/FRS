@@ -7,7 +7,7 @@ import model.Flight;
 import model.FlightInstance;
 
 public interface IFlightInstanceRepository {
-	
+
 	List<Flight> findFlightsFromTo(Airport departure, Airport arrival);
 
 	boolean addFlightInstance(FlightInstance instance);
@@ -15,5 +15,7 @@ public interface IFlightInstanceRepository {
 	boolean removeFlightInstance(FlightInstance instance);
 
 	boolean updateFlightInstance(FlightInstance instance);
+
+	List<FlightInstance> getAllFlightInstances();
 
 }

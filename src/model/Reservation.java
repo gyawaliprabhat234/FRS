@@ -2,36 +2,45 @@ package model;
 
 import java.util.List;
 
+import utility.Generator;
+
 public class Reservation {
 	private Passenger passenger;
 	private List<Ticket> tickets;
+	private List<FlightInstance> flightInstances;
 	private Agent agent;
 	private String code;
+	private UserType userType;
+	private Status status;
 	
-	public Reservation(Passenger passenger, Agent agent, String code) {
+	public Reservation(Passenger passenger, Agent agent, List<FlightInstance> flightInstances, UserType userType) {
 		super();
 		this.passenger = passenger;
 		this.agent = agent;
-		this.code = code;
+		this.code = Generator.genReservationCode();
+		this.flightInstances = flightInstances;
+		this.userType = userType;
 	}
 	
-	public Passenger getPassengers() {
-		return passenger;
+	public List<FlightInstance> getFlightInstances(){
+		return this.flightInstances;
 	}
-	public void setPassenger(Passenger passenger) {
-		this.passenger = passenger;
+	
+	public UserType getUserType() {
+		return this.userType;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+	
+	public Passenger getPassenger() {
+		return passenger;
 	}
 	public Agent getAgent() {
 		return agent;
 	}
-	public void setAgent(Agent agent) {
-		this.agent = agent;
-	}
 	public String getCode() {
 		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
 	}
 	
 	

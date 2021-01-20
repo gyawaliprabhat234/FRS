@@ -3,15 +3,17 @@ package repository.interfaces;
 import java.util.List;
 
 import model.Agent;
+import model.FlightInstance;
 import model.Passenger;
 import model.Reservation;
+import model.Ticket;
 
 public interface IReservationRepository {
 	boolean addReservation(Reservation reservation);
 
 	boolean removeReservation(Reservation reservation);
 
-	List<Reservation> findReservationsByPassengerId(Passenger passenger);
-	
-	List<Reservation> findReservationByAgent(Agent agent);
+	Reservation getReservationByCode(String code);
+
+
 }

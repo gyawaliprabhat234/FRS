@@ -1,7 +1,9 @@
 package repository.implementation;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map.Entry;
 
 import model.Airport;
 import repository.interfaces.IAirportRepository;
@@ -13,38 +15,72 @@ public class AirportRepoImpl implements IAirportRepository{
 	}
 	@Override
 	public boolean addAirport(Airport airport) {
-		// TODO Auto-generated method stub
+		if (airports.put(airport.getId(), airport) == null)
+			return true;
 		return false;
 	}
 
 	@Override
 	public boolean updateAirport(Airport airport) {
-		// TODO Auto-generated method stub
-		return false;
+		if (airports.containsValue(airport)) {
+			return false;
+
+		}
+		airports.put(null, airport);
+		return true;
 	}
 
 	@Override
 	public boolean removeAirport(Airport airport) {
-		// TODO Auto-generated method stub
+		if (airports.contains(airport)) {
+
+			airports.remove(airport);
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public Airport findAirportByAirportCode(String airportCode) {
-		// TODO Auto-generated method stub
-		return null;
+
+		List<Airport> listAllAirports = findAllAirports();
+		Airport aptbyCode = null;
+		for (Airport apt : listAllAirports) {
+			if (apt.getCode() == airportCode)
+				aptbyCode = apt;
+		}
+		return aptbyCode;
 	}
 
-	@Override
+	// @Override
 	public List<Airport> findAirportsByCity(String city) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Airport> aro = new ArrayList<Airport>();
+		for (Entry<String, Airport> pair : airports.entrySet()) {
+			if (airports.contains(city)) {
+				aro.add(0, null);
+
+			}
+		}
+		return aro;
+	}
+
+	private Object entrySet() {
+		if (airports.isEmpty()) {
+			return null;
+		}
+		return airports;
 	}
 
 	@Override
 	public List<Airport> findAllAirports() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Airport> Aro = new ArrayList<Airport>();
+		for (Entry<String, Airport> pair : airports.entrySet()) {
+			if (airports.contains(pair)) {
+				Aro.add(0, null);
+			}
+		}
+		return Aro;
 	}
+
 
 }
