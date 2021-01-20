@@ -8,7 +8,7 @@ public abstract class Person {
 	private String fname;
 	private String email;
 	private Address address;
-	public Person(String id, String lname, String fname, String email, Address address) {
+	public Person(String lname, String fname, String email, Address address) {
 		super();
 		this.id = UUID.randomUUID().toString();
 		this.lname = lname;
@@ -45,7 +45,7 @@ public abstract class Person {
 	}
 	@Override
 	public String toString() {
-		return "";
+		return "\n Name: "+ this.fname + " "+ this.lname + " Email :" + this.email;
 	}
 	
 

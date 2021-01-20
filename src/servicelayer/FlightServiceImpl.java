@@ -23,14 +23,16 @@ public class FlightServiceImpl implements  IFlightService {
 	}
 
 	@Override
-	public List<FlightInstance> findFlightsFromTo(String departure, String arrival, LocalDate flightDate) {
+	public List<FlightInstance> findFlightsFromTo( String departure, String arrival, LocalDate flightDate) {
 		
 		List<FlightInstance> listAllFlightInstances = new ArrayList<>();
 		listAllFlightInstances = repository.getFlightInstance().getAllFlightInstances();
 		List<FlightInstance> listFlightsFromTo = new ArrayList<>();
 		for(FlightInstance flightInst : listAllFlightInstances) {
 			
-			if(flightInst.getDepatureAirport().getId() == departure && flightInst.getArrivalAirport().getId() == arrival && flightInst.getDate()==flightDate) {
+			if(flightInst.getDepatureAirport().getId() == departure 
+					&& flightInst.getArrivalAirport().getId() == arrival 
+					&& flightInst.getDate()==flightDate) {
 				listFlightsFromTo.add(flightInst);
 			}
 		} 

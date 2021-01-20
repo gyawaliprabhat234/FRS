@@ -63,7 +63,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [street=" + street + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
+		return "\nAddress [street=" + street + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
 	}
 	
 	

@@ -9,16 +9,20 @@ public class FlightInstance {
 	private List<Pilot> pilots;
 	private List<Crew> crews;
 	private List<Passenger> passengers;
-	private LocalDate depatureTime;
+	private LocalDate departureTime;
 	private LocalDate arrivalTime;
 	private Airport depatureAirport;
 	private Airport arrivalAirport;
 	private Flight flight;
-	public FlightInstance(String id, LocalDate date, Flight flight) {
+	public FlightInstance(LocalDate date, Flight flight, LocalDate departureTime, LocalDate arrivalTime, Airport departure, Airport arrival) {
 		super();
 		this.id = UUID.randomUUID().toString();
 		this.date = date;
 		this.flight = flight;
+		this.departureTime = departureTime;
+		this.arrivalTime = arrivalTime;
+		this.arrivalAirport = arrival;
+		this.depatureAirport = departure;
 	}
 	public String getId() {
 		return id;
@@ -30,10 +34,10 @@ public class FlightInstance {
 		this.date = date;
 	}
 	public LocalDate getDepatureTime() {
-		return depatureTime;
+		return departureTime;
 	}
 	public void setDepatureTime(LocalDate depatureTime) {
-		this.depatureTime = depatureTime;
+		this.departureTime = depatureTime;
 	}
 	public LocalDate getArrivalTime() {
 		return arrivalTime;
@@ -65,7 +69,12 @@ public class FlightInstance {
 	public void setCrews(List<Crew> crews) {
 		this.crews = crews;
 	}
-	
+	public String toString() {
+		String str = this.flight.toString();
+		str += "\n Arrival Time: "+ this.arrivalTime.toString() + " Depature Time: " + this.departureTime.toString();
+		str += "\n Depature Airport: "+this.arrivalAirport.getName()+"  Arrival Airport: " + this.depatureAirport.getName();
+		return str;
+	}
 	
 	
 

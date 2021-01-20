@@ -31,4 +31,8 @@ public class Airline {
 	public void setName(String name) {
 		this.name = name;
 	}
+	@Override
+	public String toString() {
+		return "\n Airline [Code : "+this.code+" Name : "+this.name+" ]";
+	}
 }

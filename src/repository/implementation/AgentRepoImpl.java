@@ -2,7 +2,6 @@ package repository.implementation;
 
 import java.util.Hashtable;
 import java.util.List;
-
 import model.Agent;
 import model.Airline;
 import repository.interfaces.IAgentRepository;

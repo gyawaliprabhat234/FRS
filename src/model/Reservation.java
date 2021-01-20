@@ -21,7 +21,6 @@ public class Reservation {
 		this.flightInstances = flightInstances;
 		this.userType = userType;
 	}
-	
 	public List<FlightInstance> getFlightInstances(){
 		return this.flightInstances;
 	}
@@ -41,6 +40,11 @@ public class Reservation {
 	}
 	public String getCode() {
 		return code;
+	}
+	
+	public String toString() {
+		String str = "Reservation [Code : "+this.code+" Status: "+this.status.toString()+" ]"; 
+		return str;
 	}
 	
 	
