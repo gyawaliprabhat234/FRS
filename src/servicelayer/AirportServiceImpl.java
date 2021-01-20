@@ -9,25 +9,25 @@ import model.Airport;
 import model.Flight;
 import model.Passenger;
 import model.Reservation;
-import repository.ReservationSystemRepository;
+import repository.implementation.DataCollection;
 
 public class AirportServiceImpl implements IAirportService{
 	
-	private ReservationSystemRepository repository;
+	private DataCollection repository;
 	
-	AirportServiceImpl(ReservationSystemRepository repository) {
+	AirportServiceImpl(DataCollection repository) {
 		super();
 		this.repository = repository;
 	}
 
 	@Override
 	public List<Airport> findAllAirports() {
-		return repository.findAllAirports();
+		return repository.getAirport().findAllAirports();
 	}
 
 	@Override
 	public Airport findAirportByAirportCode(String airportCode) {
-		return repository.findAirportByAirportCode(airportCode);
+		return repository.getAirport().findAirportByAirportCode(airportCode);
 	}
 
 	@Override

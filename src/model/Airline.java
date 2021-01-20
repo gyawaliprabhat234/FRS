@@ -1,21 +1,19 @@
 package model;
 
+import java.util.UUID;
+
 public class Airline {
 	private String id;
 	private String code;
 	private String name;
 	public Airline(String id, String code, String name) {
 		super();
-		this.id = id;
+		this.id = UUID.randomUUID().toString();
 		this.code = code;
 		this.name = name;
 	}
 	public String getId() {
 		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getCode() {

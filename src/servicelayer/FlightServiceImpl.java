@@ -9,13 +9,13 @@ import model.Airport;
 import model.Flight;
 import model.Passenger;
 import model.Reservation;
-import repository.ReservationSystemRepository;
+import repository.implementation.DataCollection;
 
 public class FlightServiceImpl implements  IFlightService {
 	
-	private ReservationSystemRepository repository;
+	private DataCollection repository;
 	
-	FlightServiceImpl(ReservationSystemRepository repository) {
+	FlightServiceImpl(DataCollection repository) {
 		super();
 		this.repository = repository;
 	}

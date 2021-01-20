@@ -6,12 +6,12 @@ import model.Agent;
 import model.Flight;
 import model.Passenger;
 import model.Reservation;
-import repository.ReservationSystemRepository;
+import repository.implementation.DataCollection;
 
 public class ReservationServiceImpl implements IReservationService {
-	private ReservationSystemRepository repository;
+	private DataCollection repository;
 	
-	public ReservationServiceImpl(ReservationSystemRepository repository) {
+	public ReservationServiceImpl(DataCollection repository) {
 		super();
 		this.repository = repository;
 	}

@@ -1,15 +1,15 @@
 package servicelayer;
 
-import repository.RepositoryFactory;
+import repository.implementation.RepositoryFactory;
 
 public class ServiceFactory {
 	
 	public static IAirportService airport = new 
-			 AirportServiceImpl(RepositoryFactory.getReservationSystemRepository());
+			 AirportServiceImpl(RepositoryFactory.getDbObj());
 	public static IFlightService flight = new 
-			 FlightServiceImpl(RepositoryFactory.getReservationSystemRepository());
+			 FlightServiceImpl(RepositoryFactory.getDbObj());
 	public static IReservationService reservation = new 
-			 ReservationServiceImpl(RepositoryFactory.getReservationSystemRepository());
+			 ReservationServiceImpl(RepositoryFactory.getDbObj());
 	
 	public static IReservationService getReservationService() {
 		return reservation;		
