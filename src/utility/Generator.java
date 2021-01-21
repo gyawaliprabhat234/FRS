@@ -10,21 +10,20 @@ public class Generator {
 		return generateRandom(20);
 	}
 	public static String genReservationCode() {
-		return generateRandom(6);
+		return generateRandom(3) + randomAlphabet(3);
 	}
-	public static void find(int n, int length) {
-        String str1 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        StringBuilder sb = new StringBuilder(length);
-        Random r = new Random();
-
-        System.out.println("\n\t Unique codes are \n\n");
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<length; j++) {
-                sb.append(str1.charAt(r.nextInt(str1.length())));
-            }
-            System.out.println("  " + sb.toString());
-            sb.delete(0, length);
+	public static String randomAlphabet(int length) {
+        String str1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        Random random = new Random();
+        String randomStr = "";
+        
+        for(int i =0; i<length ; i++) {
+        	int num = random.nextInt(26);
+        	randomStr += str1.charAt(num);
         }
+        return randomStr;
+        
+       
     }
 	
 	public static String generateRandom(int length) {

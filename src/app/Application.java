@@ -327,7 +327,7 @@ public class Application {
 				addAirport();
 				break;
 			case 6:
-				System.exit(0);
+				mainMenu();
 				break;
 
 			
