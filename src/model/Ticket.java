@@ -53,9 +53,8 @@ public class Ticket {
 
 	@Override
 	public String toString() {
-		String str = "\n Ticket Number: " + this.getId();
-		str += "\nPassenger Info : " + this.passenger.toString();
-		str += "\n Flight Info :" + this.flightInstance.toString();
+		String str = "Ticket Number: " + this.getId() + " Passenger Name: " +this.passenger.getFname() +" " +this.passenger.getLname();
+		str += "\n------------------- Flight Information ----------------\n" + this.flightInstance.toString();
 		return str;
 	}
 

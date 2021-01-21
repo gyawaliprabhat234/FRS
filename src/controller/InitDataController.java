@@ -82,20 +82,19 @@ public class InitDataController {
 		Airport a6 = new Airport("DIA", "DALAS International airport",
 				new Address("800 SE HWERBE Ave", "DALAS ", "Texas", "32112"));
 		airports.add(a6);
-		Airline air1 = new Airline("AA23", "Alaska Airlines", "AL001");
+		Airline air1 = new Airline("Alaska Airlines", "AL001");
 		airlines.add(air1);
-		Airline air2 = new Airline("AA23", "Alaska Airlines", "AL001");
-		Airline air3 = new Airline("AAW2", "American Airlines", "AAM10");
-		Airline air4 = new Airline("QWS1", "JetBlue Airway", "JBU");
-		Airline air5 = new Airline("AWE11", "Spirit Airlines", "NSKS");
-		Airline air6 = new Airline("CAP", "Cape Air", "CAP11");
-		Airline air7 = new Airline("MESA", "Mesa Airlines", "MES11");
+		Airline air3 = new Airline( "American Airlines", "AAM10");
+		Airline air4 = new Airline( "JetBlue Airway", "JBU");
+		Airline air5 = new Airline( "Spirit Airlines", "NSKS");
+		Airline air6 = new Airline("Cape Air", "CAP11");
+		Airline air2 = new Airline( "Mesa Airlines", "MES11");
 		airlines.add(air2);
 		airlines.add(air3);
 		airlines.add(air4);
 		airlines.add(air5);
 		airlines.add(air6);
-		airlines.add(air7);
+//		airlines.add(air7);
 		Pilot P1 = new Pilot("MIKE", "ALEX", "", new Address("22101 abds", "Dalles", "TX", "12333"));
 		pilots.add(P1);
 		Pilot P2 = new Pilot("ABRER", "RWET", "", new Address("22101 abds", "Dalles", "TX", "12333"));

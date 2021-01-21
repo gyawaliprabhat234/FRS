@@ -46,7 +46,7 @@ public class AirportRepoImpl implements IAirportRepository{
 		List<Airport> listAllAirports = findAllAirports();
 		Airport aptbyCode = null;
 		for (Airport apt : listAllAirports) {
-			if (apt.getCode() == airportCode)
+			if (apt.getCode().equalsIgnoreCase(airportCode))
 				aptbyCode = apt;
 		}
 		return aptbyCode;

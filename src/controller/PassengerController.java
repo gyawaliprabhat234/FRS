@@ -42,12 +42,19 @@ public class PassengerController {
 		return flightService.findFlightFromTo(depature, destination ,flightDate);
 	}
 	
+	public List<Reservation> getAllReservation(Passenger passenger){
+		return this.reserveService.findReservationsByPassenger(passenger);
+	}
+	
 	public Reservation makeReservation(Passenger passenger, List<FlightInstance> flightInstances) {	
 		return reserveService.createReservation(passenger, flightInstances);
 	}
 	
 	public List<Ticket> confirmReservation(String reservationCode){
 		return reserveService.confirmReservation(reservationCode);
+	}
+	public Reservation cancelReservation(String reservationCode){
+		return reserveService.cancelReservation(reservationCode);
 	}
 
 }

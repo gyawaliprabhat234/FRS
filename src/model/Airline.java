@@ -6,7 +6,7 @@ public class Airline {
 	private String id;
 	private String code;
 	private String name;
-	public Airline(String id, String code, String name) {
+	public Airline(String name, String code) {
 		super();
 		this.id = UUID.randomUUID().toString();
 		this.code = code;
@@ -33,6 +33,6 @@ public class Airline {
 	}
 	@Override
 	public String toString() {
-		return "\n Airline [Code : "+this.code+" Name : "+this.name+" ]";
+		return "Airline Code : "+this.code+" Name : "+this.name+" ]";
 	}
 }

@@ -28,8 +28,7 @@ public class Flight {
 		this.airline = airline;
 	}
 	public String toString() {
-		String str = "\nFlight Info :\n Flight Number: " + this.number; 
-		str+= airline.toString();
+		String str = "Flight Number: " + this.number + "Airline :" + this.airline.getName(); 
 		return str;
 	}
 	

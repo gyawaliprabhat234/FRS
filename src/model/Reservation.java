@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import utility.Generator;
@@ -18,13 +19,16 @@ public class Reservation {
 		this.passenger = passenger;
 		this.agent = agent;
 		this.code = Generator.genReservationCode();
+		this.tickets = new ArrayList<>();
 		this.flightInstances = flightInstances;
 		this.userType = userType;
 	}
 	public List<FlightInstance> getFlightInstances(){
 		return this.flightInstances;
 	}
-	
+	public Status getStatus() {
+		return this.status;
+	}
 	public UserType getUserType() {
 		return this.userType;
 	}
@@ -41,9 +45,9 @@ public class Reservation {
 	public String getCode() {
 		return code;
 	}
-	
+	@Override
 	public String toString() {
-		String str = "Reservation [Code : "+this.code+" Status: "+this.status.toString()+" ]"; 
+		String str = "Reservation Code : "+this.code+"  Status: "+this.status.name(); 
 		return str;
 	}
 	

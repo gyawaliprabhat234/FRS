@@ -49,7 +49,7 @@ public class Airport {
 
 	@Override
 	public String toString() {
-		return "Airport [id=" + id + ", code=" + code + ", name=" + name + ", Address=" + address + "]";
+		return "Airport  Code :" + this.code + ", Name :" + name;
 	}
 
 }

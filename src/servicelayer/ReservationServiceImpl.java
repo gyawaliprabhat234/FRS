@@ -23,7 +23,7 @@ public class ReservationServiceImpl implements IReservationService {
 
 	@Override
 	public List<Reservation> findReservationsByPassenger(Passenger passenger) {
-		return repository.getPassenger().getPassengerById(passenger.getId()).getReservations();
+		return passenger.getReservations();
 	}
 
 	@Override
@@ -34,6 +34,7 @@ public class ReservationServiceImpl implements IReservationService {
 	@Override
 	public Reservation createReservation(Agent agent, Passenger passenger, List<FlightInstance> flights, UserType user ) {
 		Reservation reservation = new Reservation(passenger,agent, flights, user);
+		reservation.setStatus(Status.INPROGRESS);
 		passenger.addReservation(reservation);
 		if(repository.getPassenger().getPassengerById(passenger.getId()) == null)
 			repository.getPassenger().addPassenger(passenger);

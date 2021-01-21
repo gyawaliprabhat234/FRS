@@ -76,8 +76,8 @@ public class FlightInstance {
 	}
 	public String toString() {
 		String str = this.flight.toString();
-		str += "\nFlight Date : "+this.date.toString()+" Arrival Time: "+ this.arrivalTime.toString() + " Depature Time: " + this.departureTime.toString();
-		str += "\n Depature Airport: "+this.depatureAirport.getName()+"  Arrival Airport: " + this.arrivalAirport.getName();
+		str += "\nFlight Date     : "+this.date.toString()+" \nArrival Time: "+ this.arrivalTime.toString() + " Depature Time: " + this.departureTime.toString();
+		str += "\nDepature Airport: "+this.depatureAirport.getCode()+"  Arrival Airport: " + this.arrivalAirport.getCode();
 		return str;
 	}
 	
