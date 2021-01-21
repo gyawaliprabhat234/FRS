@@ -4,11 +4,11 @@ import repository.implementation.RepositoryFactory;
 
 public class ServiceFactory {
 	
-	public static IAirportService airport = new 
+	private static IAirportService airport = new 
 			 AirportServiceImpl(RepositoryFactory.getDbObj());
-	public static IFlightService flight = new 
+	private static IFlightService flight = new 
 			 FlightServiceImpl(RepositoryFactory.getDbObj());
-	public static IReservationService reservation = new 
+	private static IReservationService reservation = new 
 			ReservationServiceImpl(RepositoryFactory.getDbObj());
 	
 	public static IReservationService getReservationService() {

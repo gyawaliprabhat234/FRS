@@ -64,22 +64,9 @@ public class AirportRepoImpl implements IAirportRepository{
 		return aro;
 	}
 
-	private Object entrySet() {
-		if (airports.isEmpty()) {
-			return null;
-		}
-		return airports;
-	}
-
 	@Override
 	public List<Airport> findAllAirports() {
-		List<Airport> Aro = new ArrayList<Airport>();
-		for (Entry<String, Airport> pair : airports.entrySet()) {
-			if (airports.contains(pair)) {
-				Aro.add(0, null);
-			}
-		}
-		return Aro;
+		return List.copyOf(airports.values());
 	}
 
 

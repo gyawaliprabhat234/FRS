@@ -16,8 +16,8 @@ public class AirlineRepoImpl implements IAirlineRepository {
 	@Override
 	public boolean addAirline(Airline airline) {
 		if (airlines.put(airline.getId(), airline) == null)
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 
 	// @Override,
@@ -41,21 +41,7 @@ public class AirlineRepoImpl implements IAirlineRepository {
 
 	@Override
 	public List<Airline> findAllAirlines() {
-		List<Airline> airlinelist = new ArrayList<Airline>();
-		for (Entry<String, Airline> pair : airlines.entrySet()) {
-			airlinelist.add((Airline) airlines.entrySet());
-		}
-		return airlinelist;
-	}
-
-	@Override
-	public List<Airline> findAirlinesByAirportCode(String airportCode) {
-		List<Airline> Airlis = new ArrayList<Airline>();
-		AirportRepoImpl air = new AirportRepoImpl();
-		if (air.findAirportByAirportCode(airportCode).getCode().equalsIgnoreCase(airportCode)) {
-			Airlis.addAll(0, Airlis);
-		}
-		return Airlis;
+		return List.copyOf(airlines.values());
 	}
 
 }

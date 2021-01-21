@@ -6,6 +6,13 @@ import model.Airline;
 import model.Airport;
 
 public interface IAirportService {
+	boolean addAirport(Airport airport);
+	
+	boolean addAirline(Airline airline);
+
+	boolean removeAirport(Airport airport);
+	
+
 	List<Airport> findAllAirports();
 
 	List<Airline> findAllAirlines();
@@ -14,6 +21,6 @@ public interface IAirportService {
 
 	List<Airport> findAirportsByCity(String city);
 
-	List<Airline> findAirlinesByAirportCode(String airportCode);
+	List<Airline> findAirlinesFlyingOut(String airportCode);
 
 }

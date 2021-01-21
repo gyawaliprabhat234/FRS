@@ -14,6 +14,5 @@ public interface IAirlineRepository {
 	
 	List<Airline> findAllAirlines();
 
-	List<Airline> findAirlinesByAirportCode(String airportCode);
 
 }

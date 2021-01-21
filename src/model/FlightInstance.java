@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.*;
 
 public class FlightInstance {
@@ -9,12 +10,12 @@ public class FlightInstance {
 	private List<Pilot> pilots;
 	private List<Crew> crews;
 	private List<Passenger> passengers;
-	private LocalDate departureTime;
-	private LocalDate arrivalTime;
+	private LocalTime departureTime;
+	private LocalTime arrivalTime;
 	private Airport depatureAirport;
 	private Airport arrivalAirport;
 	private Flight flight;
-	public FlightInstance(LocalDate date, Flight flight, LocalDate departureTime, LocalDate arrivalTime, Airport departure, Airport arrival) {
+	public FlightInstance(LocalDate date, Flight flight, LocalTime departureTime, LocalTime arrivalTime, Airport departure, Airport arrival) {
 		super();
 		this.id = UUID.randomUUID().toString();
 		this.date = date;
@@ -33,16 +34,16 @@ public class FlightInstance {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public LocalDate getDepatureTime() {
+	public LocalTime getDepatureTime() {
 		return departureTime;
 	}
-	public void setDepatureTime(LocalDate depatureTime) {
+	public void setDepatureTime(LocalTime depatureTime) {
 		this.departureTime = depatureTime;
 	}
-	public LocalDate getArrivalTime() {
+	public LocalTime getArrivalTime() {
 		return arrivalTime;
 	}
-	public void setArrivalTime(LocalDate arrivalTime) {
+	public void setArrivalTime(LocalTime arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
 	public Airport getDepatureAirport() {
@@ -69,10 +70,14 @@ public class FlightInstance {
 	public void setCrews(List<Crew> crews) {
 		this.crews = crews;
 	}
+	
+	public Flight getFlight() {
+		return this.flight;
+	}
 	public String toString() {
 		String str = this.flight.toString();
-		str += "\n Arrival Time: "+ this.arrivalTime.toString() + " Depature Time: " + this.departureTime.toString();
-		str += "\n Depature Airport: "+this.arrivalAirport.getName()+"  Arrival Airport: " + this.depatureAirport.getName();
+		str += "\nFlight Date : "+this.date.toString()+" Arrival Time: "+ this.arrivalTime.toString() + " Depature Time: " + this.departureTime.toString();
+		str += "\n Depature Airport: "+this.depatureAirport.getName()+"  Arrival Airport: " + this.arrivalAirport.getName();
 		return str;
 	}
 	
